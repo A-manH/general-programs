@@ -24,5 +24,5 @@ fruits = [
 #     connection.commit()
 
 cursor.execute('''SELECT * FROM fruits;''')
-results = cursor.fetchmany())
+results = cursor.fetchmany()
 print(results)
