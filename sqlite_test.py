@@ -1,4 +1,5 @@
 import sqlite3
+import pandas as pd
 
 connection = sqlite3.connect("sqlite.db")
 cursor = connection.cursor()
@@ -24,5 +25,9 @@ fruits = [
 #     connection.commit()
 
 cursor.execute('''SELECT * FROM fruits;''')
-results = cursor.fetchmany()
-print(results)
+results = cursor.fetchall()
+
+df = pd.read_sql_query("SELECT * FROM fruits", connection)
+df.to_csv("fruits.csv", index=False)
+connection.close()
+# print(results)

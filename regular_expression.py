@@ -1,14 +1,8 @@
 import re
 
-# email = input()
-email = "name@test.gmail.com"
-match = re.search(rf"^(\w+)@(\w+\.)?gmail\.com$", email, re.IGNORECASE)
-test = 1
-print(match.group(2))
+name = "Bob Jerry"
 
-    # if expression:
-    #     print(expression)
-    #     print("Valid")
-    # else:
-    #     print(expression)
-    #     # print("Invalid")
+if matches := re.search(r"^(\w+)[, ]?(\w+)$", name, re.IGNORECASE):
+    print(matches.groups())
+else:
+    print("Invalid")
